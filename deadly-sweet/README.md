@@ -14,5 +14,5 @@
 - I explored the powerful Datawrapper and learned to turn country codes into flags!
 - Finding international angles and researching in multiple languages was what I enjoyed the most!
 ## Things I wish I could do ##
-- I thought about the carb aspect of the American diet -- but that's another story!
-- More diverse comparisons: I also had OREO data of other countries, and I felt like if I had time I could've added a few more relatable comparisons to make this story more fun!
+- I thought about the carb aspect of the American diet -- but that's worth another story!
+- More diverse comparisons: I also had OREO data on other countries, and I felt like if I had time, I could've added a few more relatable comparisons to make this story more fun!

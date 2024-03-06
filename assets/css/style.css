@@ -195,6 +195,23 @@ h6 {
   visibility: visible;
 }
 
+.row-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2em;
+}
+
+.column-container {
+  flex-grow: 1;
+}
+
+@media (max-width: 650px) {
+  .row-container {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;

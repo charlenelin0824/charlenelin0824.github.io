@@ -222,6 +222,40 @@ h6 {
   }
 }
 
+@media (min-width: 651px) and (max-width: 960px) {
+  #g-template-laptop {
+    display: block;
+  }
+
+  #g-template-mobile,
+  #g-template-medium {
+    display: none;
+  }
+}
+
+@media (min-width: 961px) {
+  #g-template-medium {
+    display: block;
+  }
+
+  #g-template-mobile,
+  #g-template-laptop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  #g-template-box {
+    width: 100%;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Allow the height to adjust based on content */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the viewport width */
+  }
+}
+
+
 /**
 * Mobile Navigation 
 */

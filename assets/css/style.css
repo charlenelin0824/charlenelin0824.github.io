@@ -197,25 +197,36 @@ h6 {
 
 .row-container {
   display: flex;
-  justify-content: center
   flex-direction: row;
   width: 100%;
-  gap: 2em;
+  gap: 2em; /* Adjust the gap as needed to bring items closer or further apart */
 }
 
 .column-container {
   flex-grow: 1;
-  justify-content: center;
-  align-items: center
+  display: flex; /* Make column-container also a flex container */
+  flex-direction: column; /* Stack its children vertically */
+  justify-content: center; /* Center the children vertically */
+}
+
+.column-container:first-child {
+  align-items: flex-end; /* Align items of the first column to the right */
+}
+
+.column-container:last-child {
+  align-items: flex-start; /* Align items of the second column to the left */
 }
 
 @media (max-width: 650px) {
   .row-container {
     flex-direction: column;
-    justify-content: center;
-    align-items: center
+  }
+  .column-container:first-child,
+  .column-container:last-child {
+    align-items: center; /* Optionally center items in smaller screens */
   }
 }
+
 
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {

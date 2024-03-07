@@ -197,6 +197,7 @@ h6 {
 
 .row-container {
   display: flex;
+  justify-content: center
   flex-direction: row;
   width: 100%;
   gap: 2em;
@@ -204,11 +205,15 @@ h6 {
 
 .column-container {
   flex-grow: 1;
+  justify-content: center;
+  align-items: center
 }
 
 @media (max-width: 650px) {
   .row-container {
     flex-direction: column;
+    justify-content: center;
+    align-items: center
   }
 }
 

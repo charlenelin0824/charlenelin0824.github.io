@@ -12,4 +12,5 @@
 - I felt like an idiot dealing with all sorts of APIs, but in the end I could actually get the items I wanted!
 ## Things I wish I could do ##
 - **Genre Analysis:** A better approach might be scraping the keyword/label data from the IMDb website (which does not offer free API) through the IMDB ID available in the OMDb data.
-- **Critic votes analysis:** I would love to break it down further to countries/regions and test if critics are just prone to vote for movies from their own countries/regions
+- **Critic Votes Analysis:** I would love to break it down further to countries/regions and test if critics are just prone to vote for movies from their own countries/regions
+- **Genre List**: I probably didn't need to list out up to 10 genres, or I should've highlighted the difference. That graphic right now is just not informative. Definitely coming back to fix it.

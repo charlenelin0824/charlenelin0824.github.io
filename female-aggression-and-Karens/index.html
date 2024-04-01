@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story Title</title>
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif, 'Open Sans', sans-serif;
+            text-rendering: optimizeLegibility;
+        }
+
+        .content {
+            max-width: 760px;
+            margin: auto;
+            padding: 0 1em;
+        }
+
+        .header {
+            padding: 3em 0;
+        }
+
+        a {
+            color: #ffb727;
+        }
+
+        .footer {
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+        figure {
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 0.5em;
+            color: #666;
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            font-size: 3em;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+        }
+
+        .full-width figure {
+            text-align: center;
+        }
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #fff880;
+        }
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+    </style>
+    <style>
+        .with-image-bg,
+        .with-video-bg {
+            position: relative;
+            background-size: cover;
+            margin-bottom: 2em;
+
+            /* Center everything inside */
+            min-height: 70svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* White text with a shadow */
+            color: white;
+            text-shadow: 0px 0px 30px black,
+                0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .with-image-bg {
+            background-image: url('https://www.intouchweekly.com/wp-content/uploads/2016/10/kate-gosselin.jpg?resize=1920%2C1080&quality=86&strip=all');
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .video-background video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <style>
+        .row-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 2em;
+        }
+
+        .column-container {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 650px) {
+            .row-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header with-image-bg">
+        <div class="content">
+            <h1>Karen Unmasked:</h1>
+            <p class="subhead">Why We Rarely Talk About Violence and Non-Physcial Aggression Among Women</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="byline">
+            <p>By <a href="https://charlenelin0824.github.io/">Charlene Lin</a></p>
+        </div>
+        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
+            line up okay.</p>
+
+        <p>paragraph text</p>
+    </div>
+
+    <div class="header with-video-bg">
+        <div class="video-background">
+            <video src="Karen-collage-test.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+    <div class="content">
+        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
+            line up okay.</p>
+        <h2>Who Are "Karen"s?</h2>
+        
+        <div>
+            <!-- start of flex box -->
+            <div class="row-container">
+                <div class="column-container">
+                    <img src="Karen-meme.png" alt="Karen Meme">
+                </div>
+                <div class="column-container">
+                    <img src="Karen-wikipedia.png" alt="Karen Definition">
+                </div>
+            </div>
+            <!-- end of flex box -->
+            <p>
+                “White American woman who is perceived as entitled or <strong>excessively demanding beyond the scope of what
+                    is considered to be normal behavior</strong> and decorum.”
+            </p>
+            <p>“Middle-aged, middle-class white woman <strong>excessively attuned to small inconveniences and signs of
+                    disorder.</strong> She may sometimes call 911, but she’s more often seen asking to “speak to the
+                manager.” Entitled and incapable of minding her own business, she inflicts misery on low-level retail and
+                service workers.”
+            </p>
+        </div>
+        <iframe title="&quot;Karen&quot; As a Baby Name Was the Most Popular 1950s-1960s; So Were Becky and Susan"
+            aria-label="Interactive line chart" id="datawrapper-chart-Vlhjb"
+            src="https://datawrapper.dwcdn.net/Vlhjb/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="375" data-external="1"></iframe>
+        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
+        </script>
+        <p>These women have become middle-aged women in the past two decades. The Karen meme first appeared in 2014, according to Know Your Meme.</p>
+        <p>You can use this for things other than headers if you want, too.</p>
+    </div>
+    <div class="footer">
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <h3>Charlene Lin</h3>
+                <p>Data Journalist | Columbia University</p>
+                <div class="social-links">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/charlenelin-tpe-tw/" class="linkedin"><i
+                            class="bx bxl-linkedin"></i></a>
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
+
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+.venv
+.DS_Store
+.ipynb_checkpoints/
+.env
+*.tsv
+title.ratings.tsv.gz

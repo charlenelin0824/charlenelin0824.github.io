@@ -99,6 +99,11 @@
             background: #fff880;
         }
 
+
+        .full-width figure {
+            text-align: center;
+        }
+
         /* margin on mobile */
         @media (max-width: 640px) {
             body {
@@ -109,7 +114,19 @@
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
-        }
+
+
+            /* margin on mobile */
+            @media (max-width: 640px) {
+                body {
+                    font-size: 18px;
+                }
+
+                .content {
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                }
+            }
     </style>
     <style>
         .with-image-bg,
@@ -152,8 +169,7 @@
             width: 100%;
             height: 100%;
         }
-    </style>
-    <style>
+
         .row-container {
             display: flex;
             flex-direction: row;
@@ -170,14 +186,14 @@
                 flex-direction: column;
             }
         }
-    </style>
-    <style>
         img {
             max-width: device-width;
             height: auto;
             display: block;
         }
+        <link href="scrolly-styles.css" rel="stylesheet"><script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
     </style>
+</head>
 </head>
 
 <body>
@@ -209,6 +225,7 @@
     <div class="header with-video-bg">
         <div class="video-background">
             <video src="Karen-collage-test.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+            <figcaption>Source: YouTube</figcaption>
         </div>
         <div class="content">
 
@@ -229,17 +246,20 @@
                 </div>
             </div>
             <!-- end of flex box -->
-            <p>
-                “White American woman who is perceived as entitled or <strong>excessively demanding beyond the scope of
-                    what
-                    is considered to be normal behavior</strong> and decorum." -- Wikipedia
-            </p>
-            <p>“Middle-aged, middle-class white woman <strong>excessively attuned to small inconveniences and signs of
-                    disorder.</strong> She may sometimes call 911, but she’s more often seen asking to “speak to the
-                manager.” Entitled and incapable of minding her own business, she inflicts misery on low-level retail
-                and
-                service workers.” -- City Journal
-            </p>
+            <blockquote cite="https://www.huxley.net/bnw/four.html">
+                <p>"White American woman who is perceived as entitled or <strong>excessively demanding beyond the scope
+                        of what is considered to be normal behavior</strong> and decorum."</p>
+                <cite>—- Wikipedia </cite>
+            </blockquote>
+
+            <blockquote cite="https://www.huxley.net/bnw/four.html">
+                <p>“Middle-aged, middle-class white woman <strong>excessively attuned to small inconveniences and signs
+                        of disorder.</strong> She may sometimes call 911, but she’s more often seen asking to “speak to
+                    the manager.” Entitled and incapable of minding her own business, she inflicts misery on low-level
+                    retail and service workers.” </p>
+                <cite>-- City Journal </cite>
+            </blockquote>
+
         </div>
         <iframe title="&quot;Karen&quot; As a Baby Name Was the Most Popular 1950s-1960s; So Were Becky and Susan"
             aria-label="Interactive line chart" id="datawrapper-chart-Vlhjb"
@@ -252,7 +272,9 @@
             in the past two decades. The Karen meme first appeared in 2014, according to <a
                 href="https://knowyourmeme.com/editorials/guides/how-did-the-name-karen-become-an-insult-directed-against-older-women-karen-hate-on-the-internet-explained"
                 target="_blank">Know Your Meme</a>.</p>
-        <!-- <p>Not only Karen, Susan and Becky were also popular names in the same era. From 1951-1968, Karen and Susan were constantly the top 10 popular baby names in the US. Becky of “Barbecue Becky" also saw its peak around 1960. </p> -->
+        <p>Not only Karen, Susan and Becky were also popular names in the same era and are oftentimes associated with
+            the same stereotype. From 1951-1968, Karen and Susan were constantly the top 10 popular baby names in the
+            US. Becky of “Barbecue Becky" also saw its peak around 1960. </p>
 
         <h2> "Karen" Is Not Just an American Product </h2>
         <p>In fact, the phenomenon of entitled "Karen"s transcends borders, manifesting itself in various cultures
@@ -298,10 +320,6 @@
         <p>As we confront the phenomenon of entitlement, it becomes increasingly imperative to address not only
             individual behaviors but also the systemic inequities that sustain them.</p>
 
-        <h2>Not "Just Crazy": The Social Influence On Female Aggression and Why We Shouldn't Just Laugh About It</h2>
-
-        <img src="book-hardcopy.png" alt="Book: Aggression, Antisocial Behavior, and Violence Among Girls">
-
         <p>Criticism of the Karen slang and memes has arisen, with some claiming it to be a sexist slur invented by men
             to attack women for having opinions. Any term introduced into public discourse can take on unexpected
             connotations. Just as we don't abandon discussions of feminism because some individuals exploit it for
@@ -312,9 +330,20 @@
             Karens may not be the ones pulling the trigger, does their complicity in such actions warrant examination?
         </p>
 
+        <h2>Not "Just Crazy": The Social Influence On Female Aggression and Why We Shouldn't Just Laugh About It</h2>
+
         <p>Aggression among females is frequently overlooked due to its non-physical nature. Unlike male aggression,
             which often escalates to physical violence and criminal behavior, female aggression tends to manifest in
             verbal, emotional, and relational disruptions.</p>
+
+
+        <div class="full-width">
+            <figure>
+                <img src="book-hardcopy.png" alt="Book: Aggression, Antisocial Behavior, and Violence Among Girls">
+                <figcaption>Photo by Charlene Lin</figcaption>
+            </figure>
+        </div>
+
 
         <p>Studies have indicated that women engage in more indirect aggression compared to men, such as spreading
             rumors, manipulating emotions, and sabotaging relationships.</p>
@@ -323,11 +352,16 @@
             others, gossiping, and spreading rumors to tarnish reputations. These actions align with the definition of
             female aggression, which may not be widely recognized.</p>
 
+        <p>Aggression in this form are proven to be associated with low IQs, violence in relationships, tendency to take
+            risks that might lead to delinquency and unintended pregnancy. Women identified to be highly aggression and
+            withdrawn also tend to be unattentive and irresponsive in parenthood. </p>
+
         <p>The true misogyny lies in normalizing the stereotype that women are inherently irrational, and in dismissing
             Karens and similar figures as merely fulfilling that stereotype.</p>
 
         <p>By neglecting to address the Karen phenomenon within public discourse, we risk perpetuating harmful
-            stereotypes and reinforcing societal inequalities. It not only trivializes the experiences of those affected by their
+            stereotypes and reinforcing societal inequalities. It not only trivializes the experiences of those affected
+            by their
             behavior but also normalizes toxic dynamics within our communities. This normalization can lead to a cycle
             of oppression, where marginalized individuals are further marginalized by systems that fail to recognize and
             address their grievances.</p>
@@ -338,14 +372,124 @@
             oppression, allowing systemic inequalities to persist unchecked.</p>
 
         <p>It is essential to engage in open and honest discussions about the Karen phenomenon and its
-            implications for society. Karens losing control should be more than a funny video we laugh about, and the structural problems 
+            implications for society. Karens losing control should be more than a funny video we laugh about, and the
+            structural problems
             underlie this phenomenon are worth looking into.</p>
 
 
+    </div>
 
+    <section id="scrolly-images" class="scrolly-container">
+        <div class="sticky-thing">
+            <img src="book-hardcopy.png">
+        </div>
+        <div class="steps-container">
+            <div class="step" id="step1">
+                <div>
+                    <p>Step one, adjust the CSS at the bottom of this page to change spacing between steps.</p>
+                    <p>Here is some more text, in case there are multiple paragraphs.</p>
+                </div>
+            </div>
+            <div class="step" id="step2">
+                <p>Find the JavaScript code near the bottom to associate each step with an image change.</p>
+            </div>
+            <div class="step" id="step3">
+                <p>By default, the steps are a set width and the text is left-centered. Find the rule in
+                    <code>scrolly-styles.css</code> that refers to <code>.step > *</code> to adjust or remove the width,
+                    center
+                    the text, or change the background color/opacity.
+                </p>
+            </div>
+            <div class="step" id="step4">
+                <p>Step four, lorem ipsum dolor sic amet.</p>
+            </div>
+            <div class="step" id="step5">
+                <p>Step five, lorem ipsum dolor sic amet.</p>
+            </div>
+        </div>
+    </section>
 
+    <div class="content">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            Nemo
+            enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui
+            ratione voluptatem sequi nesciunt.</p>
+        <figure>
+            <img
+                src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
+            <figcaption>This is an image caption</figcaption>
+        </figure>
 
     </div>
+
+
+    <script>
+        /*************
+        
+        This is the JavaScript that makes the scrolly work 
+        
+        *************/
+
+        /* 
+        This part attaches a scroll to the element with id="scrolly-images"    
+        */
+        (() => {
+            const scroller = scrollama()
+
+            scroller
+                .setup({
+                    parent: document.querySelector("#scrolly-images"),
+                    step: ".step",
+                    offset: 0.6,
+                    debug: false,
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller.resize)
+        })()
+
+        /*
+        This part sets up your actions. In this case, it's changing the image in the scrolly container.
+        */
+
+        d3.select("#step1").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "book-hardcopy.png")
+        })
+
+        d3.select("#step2").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image2.jpg")
+        })
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image1.jpg")
+        })
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image2.jpg")
+        })
+
+        d3.select("#step5").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image1.jpg")
+        })
+    </script>
+    <style>
+        /* Change this to adjust the padding between steps */
+        .step {
+            margin-bottom: 70vh;
+        }
+    </style>
 
     </div>
 

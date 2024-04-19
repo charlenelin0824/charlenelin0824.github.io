@@ -127,7 +127,7 @@
     }
 
     .with-image-bg {
-      background-image: url('mukbang-cover.jpg');
+      background-image: url('mukbang-cover.png');
     }
 
     .video-background {
@@ -144,6 +144,32 @@
       height: 100%;
     }
   </style>
+  <style>
+    .row-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 2em;
+    }
+
+    .column-container {
+      flex-grow: 1;
+    }
+
+    @media (max-width: 650px) {
+      .row-container {
+        flex-direction: column;
+      }
+    }
+
+    img {
+      max-width: device-width;
+      height: auto;
+      display: block;
+    }
+
+    <link href="scrolly-styles.css" rel="stylesheet"><script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+  </style>
 
   <link href="scrolly-styles.css" rel="stylesheet">
   <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
@@ -154,55 +180,82 @@
 <body>
   <div class="header with-image-bg">
     <div class="content">
-      <h1>Eating Shows: From Quantity to Quality</h1>
-      <p class="subhead">What Makes The Show Successful</p>
+      <h1>Eating Show: From Quantity to Quality</h1>
+      <p class="subhead">What Makes A Show Successful</p>
     </div>
   </div>
   <div class="content">
+    <figure>
+      <figcaption>Photo Source: <a href="https://www.youtube.com/watch?v=22uAugL2N4g">Eatingshow Ssoyoung</a>
+      </figcaption>
+    </figure>
     <div class="byline">
       <p>By <a href="https://jonathansoma.com">Charlene Lin</a></p>
     </div>
-    <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-      line up okay.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</p>
+    <p>Mukbang is a popular online trend originating from South Korea that involves live-streaming or recording videos
+      of individuals eating food while interacting with their audience.</p>
+
+    <p>The term "mukbang" is a combination of two Korean words: "mukja" (eating) and "bangsong" (broadcast).</p>
+
+    <p>The history of mukbang can be traced back to around 2010. Initially, this trend gained attention as a form of
+      entertainment and social interaction, particularly among those who ate alone and wanted virtual company during
+      meals.</p>
+
+    <p>Over time, mukbang evolved into a global phenomenon, with content creators across various platforms such as
+      YouTube, Twitch, and Instagram producing mukbang videos. These videos feature individuals consuming enormous
+      portions of food, often including popular or unique dishes, while engaging with viewers through live chat or
+      commentary.</p>
+
+    <p>Mukbang has also expanded beyond its original purpose of providing companionship during meals to become a form of
+      entertainment, with some creators specializing in creating ASMR (Autonomous Sensory Meridian Response) content by
+      focusing on eating sounds.</p>
+
   </div>
-
-
 
   <section id="scrolly-video" class="scrolly-container">
     <div class="sticky-thing">
     </div>
     <div class="steps-container">
       <div class="step" id="step-first">
-        <p>You will have to use VS Code's <strong>Live Server</strong> extension to do this locally. Once you've
-          installed it, right-click the filename on the left-panel and select "Open with Live Server".</p>
+        <p> According to <a href="https://journals.sagepub.com/doi/full/10.1177/1460458220901360?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org">a research at Seoul National University </a>, <strong>spicy and irritating food</strong> tend to
+          attract more views.</p>
       </div>
       <div class="step" id="step-second">
-        <p>To find more details about how this is done, check out <a
-            href="https://github.com/dkaoster/scrolly-video">scrolly-video</a>.</p>
+        <p> <strong>Seafood</strong>and less affordable foods are also common as they bring enjoyment. </p>
       </div>
-      <div class="step" id="step-third">
-        <p>Step three.</p>
-      </div>
-      <div class="step" id="step-fourth">
-        <p>Step four.</p>
-      </div>
-      <div class="step" id="step-fifth">
-        <p>Step five.</p>
+      <div class="step" id="step-thrid">
+        <p> It is important to not bite the noodles and finish them all at once. <a
+            href="https://github.com/dkaoster/scrolly-video">link</a>
+        </p>
       </div>
     </div>
   </section>
   <div class="content">
+    <figure>
+      <figcaption>Video Source: YouTube shorts</figcaption>
+    </figure>
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
       enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
       ratione voluptatem sequi nesciunt.</p>
-    <figure>
-      <img src="../mukbang-cover.png">
-      <figcaption>This is an image caption</figcaption>
-    </figure>
+  </div>
+  <!-- start of flex box -->
+  <div class="row-container">
+    <div class="column-container">
+      <img src="big-eater-1.png" alt="Before">
+    </div>
+    <div class="column-container">
+      <img src="big-eater-2.png" alt="After">
+    </div>
+  </div>
+  <!-- end of flex box -->
+
+  <figure>
+    <img src="../mukbang-cover.png">
+    <figcaption>This is an image caption</figcaption>
+  </figure>
+
+  <div>
     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
       numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
       veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
@@ -248,20 +301,31 @@
     */
     new ScrollyVideo({
       scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
-      src: "spicy-mukbang.mp4",
+      src: "collage-videos.mp4",
       full: true,
-      // cover: true
+      cover: true
     });
   </script>
   <style>
     .step {
-      height: 100vh;
-      margin-bottom: 0;
+      width: 500px;
+      height: 80px;
+      margin-top: calc(50vh - 150px);
+      margin-bottom: 100vh;
+      color: #f4f4f4;
+      z-index: 0;
+      position: sticky;
+      max-width: 700px;
+      padding: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      transform: translateY(-50%)
     }
 
-    /* .sticky-thing > canvas {
+    .sticky-thing>canvas {
       object-fit: cover;
-    } */
+      z-index: 0;
+      position: sticky;
+    }
   </style>
 
 </body>

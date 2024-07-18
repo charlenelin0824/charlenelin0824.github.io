@@ -17,7 +17,7 @@
     }
 
     .container {
-        /*		background: red;*/
+        /* background: red; */
         width: 600px;
         margin: 40px auto 0 auto;
     }
@@ -51,20 +51,15 @@
 
     .mapboxgl-popup {
         max-width: 400px;
-        font:
-            12px/20px 'Helvetica Neue',
-            Arial,
-            Helvetica,
-            sans-serif;
-    
-    .image {
-            max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
 
+    .image {
+        max-width: 400px;
+    }
 </style>
 
-
 <body>
-
     <div class="container">
         <h1>No Hotspot? Find Free WiFi in NYC</h1>
         <h2>Stay connected everywhere.</h2>
@@ -72,7 +67,7 @@
         <p>There are 3,319 free Wi-Fi hotspots in NYC. More than half of them are the kiosks at bus stops called LinkNYC Kiosk.</p>
 
         <div id="map"></div>
-        
+
         <p>LinkNYC was created in 2014 to replace the city's 13,000 payphones. The kiosks offer free Wi-Fi, phone
             calls, device charging and a tablet for maps and city services. The city has installed more than 1,700
             kiosks, with 7,500 planned by 2026. 
@@ -80,12 +75,11 @@
             used for loitering and drug dealing.
         </p>
     
-    <div class="image">
-        
-        <img src="LinkNYC.webp" alt="LinkNYC kiosk" width="600px">
-        <p>Source: <a href="https://www.nytimes.com/2019/12/23/nyregion/linknyc-wifi.html">Street Design Manual</a></p>
+        <div class="image">
+            <img src="LinkNYC.webp" alt="LinkNYC kiosk" width="600px">
+            <p>Source: <a href="https://www.nytimes.com/2019/12/23/nyregion/linknyc-wifi.html">Street Design Manual</a></p>
+        </div>
     </div>
-
 </body>
 
 <script>
@@ -105,7 +99,7 @@
         });
 
         map.loadImage(
-            '/wifi-icon.png',
+            'data/wifi-icon.png',
             (error, image) => {
                 if (error) throw error;
                 map.addImage('wifi-icon.png', image);
@@ -116,7 +110,7 @@
             'type': 'symbol',
             'source': 'wifi',
             'layout': {
-                'icon-image': 'wifi-icon', // The name has to match with the image loaded
+                'icon-image': 'wifi-icon.png', // The name has to match with the image loaded
                 'icon-size': 0.03,
                 "icon-allow-overlap": false // This can be 'true' if you want to display all the markers 
             },

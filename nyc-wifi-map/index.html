@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Free WiFi Map</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+</head>
+
+<style>
+    body {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .container {
+        /*		background: red;*/
+        width: 600px;
+        margin: 40px auto 0 auto;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .byline {
+        font-style: italic;
+        margin-bottom: 18px;
+    }
+
+    p {
+        margin-bottom: 18px;
+    }
+
+    #map {
+        width: 100%;
+        height: 500px;
+        /* background: yellow; */
+        margin-bottom: 18px;
+    }
+
+    .mapboxgl-popup {
+        max-width: 400px;
+        font:
+            12px/20px 'Helvetica Neue',
+            Arial,
+            Helvetica,
+            sans-serif;
+    
+    .image {
+            max-width: 400px;
+
+</style>
+
+
+<body>
+
+    <div class="container">
+        <h1>No Hotspot? Find Free WiFi in NYC</h1>
+        <h2>Stay connected everywhere.</h2>
+        <p class="byline">By Charlene Lin</p>
+        <p>There are 3,319 free Wi-Fi hotspots in NYC. More than half of them are the kiosks at bus stops called LinkNYC Kiosk.</p>
+
+        <div id="map"></div>
+        
+        <p>LinkNYC was created in 2014 to replace the city's 13,000 payphones. The kiosks offer free Wi-Fi, phone
+            calls, device charging and a tablet for maps and city services. The city has installed more than 1,700
+            kiosks, with 7,500 planned by 2026. 
+            The kiosks have been criticized for privacy concerns and for being
+            used for loitering and drug dealing.
+        </p>
+    
+    <div class="image">
+        
+        <img src="LinkNYC.webp" alt="LinkNYC kiosk" width="600px">
+        <p>Source: <a href="https://www.nytimes.com/2019/12/23/nyregion/linknyc-wifi.html">Street Design Manual</a></p>
+    </div>
+
+</body>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhcmxlbmVsaW4iLCJhIjoiY2xybzR1Mm9jMTYzZzJscDRmZzNhMzFvdyJ9.krXSfGfrs-tXc7aB4buRxA';
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        center: [-74.0060, 40.7128], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+        style: "mapbox://styles/charlenelin/clyqq8rqi00e301qn9lk64cv5"
+    });
+
+    map.on('style.load', () => {
+        map.addSource('wifi', {
+            type: 'geojson',
+            data: 'data/NYC-wifi-hotspots.geojson'
+        });
+
+        map.loadImage(
+            '/data/wifi-icon.png',
+            (error, image) => {
+                if (error) throw error;
+                map.addImage('wifi-icon', image);
+            });
+
+        map.addLayer({
+            'id': 'wifi',
+            'type': 'symbol',
+            'source': 'wifi',
+            'layout': {
+                'icon-image': 'wifi-icon', // The name has to match with the image loaded
+                'icon-size': 0.03,
+                "icon-allow-overlap": false // This can be 'true' if you want to display all the markers 
+            },
+        });
+
+        const popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+
+        map.on('mouseenter', 'wifi', (e) => {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+
+            // Copy coordinates array.
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const locationType = e.features[0].properties.location_t;
+            const type = e.features[0].properties.type;
+            const location = e.features[0].properties.location;
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            if (['mercator', 'equirectangular'].includes(map.getProjection().name)) {
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+            }
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            popup.setLngLat(coordinates).setHTML(`${locationType}, ${type}, ${location}`).addTo(map);
+        });
+
+        map.on('mouseleave', 'wifi', () => {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+    });
+</script>
+
+</html>

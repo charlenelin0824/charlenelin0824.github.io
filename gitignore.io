@@ -11,3 +11,13 @@ my_large_directory/
 *.iso
 *.gz
 /path/to/largefile.txt
+
+# Ignore all .zip files
+*.zip
+
+# Ignore specific large files
+largefile1.bin
+largefile2.tar.gz
+
+# Ignore a specific directory and all its contents
+largefiles/

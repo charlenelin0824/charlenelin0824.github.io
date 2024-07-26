@@ -1,0 +1,126 @@
+---
+title: "CDC-data-1"
+output: html_document
+date: "2024-07-15"
+---
+```{r}
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r setup}
+
+library(tidyverse)
+
+#install.packages("janitor")
+library(janitor)
+
+#install.packages("tidycensus")
+library(tidycensus)
+```
+```{r load}
+
+centers <- read_csv("Input/2021_ART__Patient_and_Cycle_Characteristics_20240530.csv") %>%
+    clean_names()
+  
+```
+
+## My API key: a05bd3a5ffc1c1ec5b71f6ea187226b05168a19a
+
+
+```{r census}
+census_api_key("a05bd3a5ffc1c1ec5b71f6ea187226b05168a19a", install = TRUE, overwrite=TRUE)
+
+rm(vars)
+dp_vars <- load_variables(2020, "dp", cache = TRUE)
+dhc_vars <- load_variables(2020, "dhc", cache = TRUE)
+
+zip <- get_decennial(geography = "zcta",
+                     variables = c(females_16plus = "DP1_0068C",
+                                   #count of women 16+ yo
+                                   total_pop = "DP1_0001C"),
+                     year = 2020,
+                     sumfile = "dp")
+
+zip <- zip %>%
+  select(zip = NAME,
+         variable,
+         value) %>%
+  spread(variable, value)
+
+zip <- zip %>%
+  mutate(zip=str_remove(zip, "ZCTA5 "))
+```
+```{r load}
+
+centers %>%
+  filter(!clinic_id == "9999") %>%
+  count(n_distinct(clinic_id))
+  # 453 clinics in data
+
+centers <- centers %>%
+  filter(question_id == "Q005" & ! is.na(cycle_count) & !clinic_id == "9999") %>%
+  select(clinic_id, year, facility_name, medical_director, address, city, 
+         state_id = location_abbr, state_name = location_desc, zip_code, clinic_status, cycle_count) %>%
+unique()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r zip join}
+zip_details <- read_csv("Input/uszips.csv") %>%
+  select(zip, city, state_id, state_name)
+
+zip <- zip %>%
+  full_join(zip_details, by = "zip")
+
+rm(zip_details)
+
+state_pop <- zip %>%
+  group_by(state_id, state_name) %>%
+  summarise(total_pop = sum(total_pop),
+            females_16plus = sum(females_16plus)) %>%
+  
+  filter(!is.na(total_pop) & !is.na(state_name))
+```
+
+```{r join}
+# Load the dplyr package
+library(dplyr)
+
+# Summarise the centers data frame
+centers_state_summary <- centers %>%
+  group_by(state_id) %>%
+  summarise(centers = n_distinct(clinic_id),
+            cycles = sum(cycle_count))
+
+# Join the state_pop and centers_state_summary data frames
+join <- state_pop %>%
+  full_join(centers_state_summary, by = "state_id") %>%
+  mutate(cycles_per_females = cycles / (females_16plus / 1000),
+         cycles_per_females = round(cycles_per_females, 3))
+
+```
+```{r}
+Output <- "state_pop.csv"
+
+# Write the dataframe to a CSV file
+write.csv(state_pop, Output, row.names = FALSE)
+```
+
+```{r demo}
+
+test <- zip %>%
+  group_by(state_id) %>%
+  summarise(n_zips = n_distinct(zip))
+
+```
+

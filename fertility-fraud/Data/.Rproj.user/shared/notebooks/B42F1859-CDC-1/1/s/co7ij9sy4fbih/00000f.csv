@@ -1,0 +1,9 @@
+"0","state_pop <- zip %>%
+  group_by(state_id, state_name) %>%
+  summarise(total_pop = sum(total_pop),
+            females_16plus = sum(females_16plus)) %>%
+  
+  filter(!is.na(total_pop) & !is.na(state_name))
+"
+"1","[38;5;232m`summarise()` has grouped output by 'state_id'. You can override using the `.groups` argument.[39m
+"

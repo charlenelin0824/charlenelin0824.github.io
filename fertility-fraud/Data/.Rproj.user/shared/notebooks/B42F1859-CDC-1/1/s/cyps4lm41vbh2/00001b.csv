@@ -1,0 +1,4 @@
+"0","Output <- ""state_pop.csv"""
+"0",""
+"0","# Write the dataframe to a CSV file"
+"0","write.csv(state_pop, Output, row.names = FALSE)"

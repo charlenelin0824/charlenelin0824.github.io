@@ -41,18 +41,54 @@
         }
 
         .content {
-            max-width: 80%;
-            margin: auto;
+            max-width: 70%;
+            margin: 0 auto;
+            /* Centers the container horizontally */
+            display: flex;
+            /* Enables flexbox layout */
             justify-content: center;
+            /* Centers content horizontally */
+            align-items: center;
+            /* Centers content vertically (optional) */
+            text-align: center;
+            /* Centers text and inline elements (optional) */
         }
+
+        .content iframe {
+            width: 100%;
+            /* Ensures iframe takes up full width of the container */
+            height: auto;
+            /* Maintains aspect ratio */
+            max-width: 100%;
+            /* Prevents iframe from exceeding container width */
+        }
+
+        .container {
+            padding: 3em 0;
+            width: 80%;
+            margin: 0 auto;
+            /* Centers the container horizontally */
+            text-align: left;
+            /* Aligns text to the left */
+            font-size: 1vw;
+            /* Sets the font size to 12px */
+        }
+
 
         .header {
             padding: 3em 0;
         }
 
+        .header-with-image {
+            background-image: url('egg-donation-ads.png');
+            height: cover;
+            width: cover;
+        }
+
         a {
             color: #ddb6b3;
         }
+
 
         .footer {
             background: #f4f4f4;
@@ -196,52 +232,345 @@
             display: block;
         }
 
-        <link href="scrolly-styles.css" rel="stylesheet"><script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script><link href="scrolly-styles.css" rel="stylesheet"><script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script><script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
     </style>
 
+    <link href="scrolly-styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+
+    <link href="scrolly-styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+
+    </style>
 
 
 
     <div class="header with-image-bg">
         <div class="content">
-            <h1>Scarcity, High Compensation, and Deception</h1>
-            <p class="subhead">How Fertility Fraud Thrives Amid Lack of Regulation</p>
+            <h1>Deception and Patient Abuse Seem Prevalent in the Booming World of Egg Donation </h1>
+            <p class="subhead">Egg donation has increased more than eightfold in the past two decades, but there is
+                still little protection against fraud and abuse
+            </p>
         </div>
     </div>
 </head>
 
 <body>
-    <div class="content">
-        <iframe title="US Fertility Clinics Concentrates in Northeast Coast, California, and Chicago" aria-label="Map"
-            id="datawrapper-chart-dz34E" src="https://datawrapper.dwcdn.net/dz34E/5/" scrolling="no" frameborder="0"
-            style="width: 0; min-width: 80% !important; border: none;" height="700" data-external="1"></iframe>
-        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
-        </script>
+    <div class="container">
+        <p>I had just started graduate school at Columbia University, and the words of my mother back in Taiwan still
+            haunted me: “You will not get a PENNY from this family!” Though she eventually gave in, my parents are by no
+            means wealthy, and I still felt guilty for taking some of their hard-earned money to satisfy my extravagant
+            dream of studying abroad.</p>
 
-        <iframe title="California Has the Most Fertility Centers in the United States" aria-label="Map"
-            id="datawrapper-chart-roMKI" src="https://datawrapper.dwcdn.net/roMKI/3/" scrolling="no" frameborder="0"
-            style="width: 0; min-width: 80% !important; border: none;" height="585" data-external="1"></iframe>
+        <p>I tapped the “learn more” button at the bottom of one of the ads and was immediately greeted by an aggressive
+            chatbot who dove right into quizzing me about my height, BMI, and drinking and drug use habits.</p>
+
+        <p>I shut the window, but the company, Blossom California Fertility, an egg donor recruitment firm based in
+            California, kept sending me direct messages through Instagram, urging me to finish the questions. I
+            eventually agreed to talk to an Asian case manager.</p>
+
+        <p>The woman, who said her name was Max Vollstedt, kept emphasizing that most people don’t feel much discomfort
+            in the process.</p>
+
+        <p>She said with my Ivy League profile, I could expect upwards of $30,000 for each attempt to produce eggs for
+            donation – which I later learned was roughly triple the standard compensation for egg donors in the United
+            States.</p>
+
+        <p>Then she noted I’d be paid less than a Chinese or Japanese Ivy League donor, who is “in smaller supply,”
+            adding, “We already have a lot of Taiwanes as egg donors.”</p>
+
+        <p>Within two days, Vollstedt sent me my first offer of $25,000 for my first cycle, which included going through
+            checkups, hormone injections for about ten days, and an egg retrieval done at the clinic my intended parents
+            assigned me to.</p>
+
+        <p>But her pushy attitude made me skeptical. She started to talk about my second donation before I even said yes
+            to the first one. She asked me to do two cycles within three months.</p>
+
+        <p>From the stories I’ve read, I know injecting hormones and stimulating the ovaries can cause a lot of
+            discomfort, such as bloating and swollen ovaries. Some couldn’t conceive and needed to look for an egg donor
+            themselves after multiple donations.</p>
+
+        <p>I replied with health risks concerns as I knew according to the American Society of Reproductive Medicine,
+            one is not suggested to donate more than six times in a lifetime.</p>
+
+        <p>Vollstedt told me that it’s not six times in a lifetime, but six times in a year. “The maximum a clinic will
+            take is about 10 to 12 times,” she said.</p>
+
+        <p>I politely turned it down.</p>
+
+        <p>Two days later, she sent me an offer of $31,000, then $35,000, with a 2-day deadline for an answer.</p>
+
+        <p>Meanwhile, I got a message from other donor recruiting firms I’d never contacted. One manager at an egg
+            donation agency in California, who asked to remain anonymous, sent me a message through LinkedIn with a link
+            to a profile, asking if it was me.</p>
+
+        <p>“Sorry to bother you. I got your profile and seems like the intended parents are asking around about you,”
+            the woman told me. “I was wondering who’s profile is this excellent, and I didn’t expect that you’re so easy
+            to find.”</p>
+
+        <p>But the profile she sent wasn’t the one I created. It used information and photos from my Instagram and
+            LinkedIn accounts without my consent, and the majority of the information wasn’t true. Both my parents are
+            Taiwanese, but this profile said my father is Chinese. I was also listed as three inches taller, given new
+            hobbies like traveling and jogging, and purple as my favorite color.</p>
+
+        <p>My photos were also manipulated. In one, I had cartoonishly round eyes, and in another, a drastically sloped
+            jawline.</p>
+
+        <p>Perhaps most disturbing: In the application, I stated I was willing to be contacted by the intended parents,
+            but my profile said I wanted to remain anonymous. This seemed to ensure that the intended parents would have
+            no way of knowing they had been deceived.</p>
+
+        <p>I withdrew from the process, but kept digging into the rapidly expanding and largely unregulated world of egg
+            donation. In online forums in my native Taiwan, women share their experiences flying to the U.S. to donate
+            their eggs for only a third of what I had been promised.</p>
+
+        <p>“Some agencies could make profiles with your information and put it in their donor database to attract
+            clients, even when they don’t really know you,” the Taiwanese manager said. She said it’s a way for the
+            agencies to attract clients and stay hopeful.</p>
+
+        <p>In 2020, the US egg donation market size was estimated at $684 million, up from $80 million in 2011, and is
+            expected to grow at an annual rate of 12 percent, according to Transparency Market Research and Justine
+            Levy, who filed an antitrust lawsuit on the pricing of human eggs in 2011.</p>
+
+        <p>The U.S. Centers for Disease Control and Prevention (CDC) has been surveying fertility clinics on assisted
+            reproductive procedures since 1995. The agency has published some of the data from the annual surveys –
+            mostly on the number and type of “cycles” performed by the clinics, defined as ”when a woman begins taking
+            fertility drugs or having her ovaries monitored for follicle production.”</p>
+
+        <p>Procedures done on egg donors, specifically, have skyrocketed since then: from 3,301 attempted cycles using
+            donor eggs in 1995, to 28,320 in 2021, the most recent data available, my analysis found. The number of
+            cycles involving donor eggs – including the frozen and fresh ones – increased almost eight-fold.</p>
+
+    </div>
+
+
+
+    <div class="content">
+        <iframe title="Egg Donation, Once Relatively Rare, Sees More Than Eightfold Increase Since 1995" aria-label="Stacked Bars" id="datawrapper-chart-pH96T" src="https://datawrapper.dwcdn.net/pH96T/8/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="291" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+        </script>
+    </div>
+
+    <div class="container">
+        <p>While nearly 30,000 donor cycles are conducted annually, misconduct in such a booming industry is still very
+            prevalent. Especially among third-party service providers, as it is virtually unregulated.</p>
+
+        <p>Third-party service providers offer an umbrella of services, including donation of eggs, sperm, and embryos
+            and surrogacy services.</p>
+
+        <p>People struggling with infertility can find their own donor and work with a clinic, participate in a donation
+            program with a medical provider, or seek help from agencies that claim to have a bigger pool of donors to
+            choose from.</p>
+
+        <p>“There are people in this business who commit fraud every day. Every. Single. Day,“ said Dr. Aimee, a
+            fertility specialist who’s worked in the industry for 20 years.</p>
+
+        <p>Until 2024, only 15 states have introduced some level of regulations purporting to protect donors and
+            would-be parents from fertility fraud, such as misrepresentation of donor information, misusing donor
+            tissues, or inseminating patients without written consent.</p>
+    </div>
+
+    <div class="content">
+        <iframe
+            title="15 States Have Regulations Regarding Fertility Fraud, While Third-Party Service Providers Left Unregulated"
+            aria-label="Map" id="datawrapper-chart-OK6en" src="https://datawrapper.dwcdn.net/OK6en/2/" scrolling="no"
+            frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="508"
+            data-external="1"></iframe>
         <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r = 0; r < e.length; r++)if (e[r].contentWindow === a.source) { var i = a.data["datawrapper-height"][t] + "px"; e[r].style.height = i } } })) }();
         </script>
     </div>
 
-    <section id="scrolly-video" class="scrolly-container">
-        <div class="sticky-thing">
-        </div>
-        <div class="steps-container">
-            <div class="step" id="step-first">
-                <p> I don't know how to weave them into the story.</p>
+    <div class="container">
+
+        <p>However, even in those states, the existing regulations only imposed laws against healthcare providers.
+            Third-party donors or agencies are not part of it.</p>
+
+        <p>At the same time, intended parents who work with agencies are often charged a higher price, especially when
+            it comes to how high the prices can go.</p>
+
+        <p>Take egg donation as an example. On average, a US agency charges a 21.81% higher compensation than a clinic
+            does, according to an analysis conducted on the pricing data collected by Bailey K. Sanders, Assistant
+            Professor at Duke University School of Law. This excludes legal fees and administrative expenses that could
+            be paid to the agency.</p>
+
+        <p>However, despite paying more for third-party services, prospective parents are not protected better.</p>
+
+        <p>Third-party misconduct is not criminalized by any means. It usually takes years of litigation in the civil
+            court and hundreds of thousands of dollars of legal fees to seek judicial remedies for industry misconduct.
+        </p>
+
+        <p>“A lot of times, the intended parents don't take it beyond just being upset,” said Dr. Aimee, “They're
+            already coming from a place of trauma (of infertility),” she said.</p>
+
+        <p>Dr. Aimee said filing a lawsuit makes their personal information part of the public domain, which most
+            families with infertility don’t want. “​​And I think a lot of agencies know that, “ said Dr. Aimee.</p>
+
+        <p>Lala Chang, a thirty-year-old Taiwanese woman who asked only to use her first name, connected with me through
+            Dcard, a Taiwanese online forum with a primarily young user base, where many Taiwanese egg donors share
+            their experiences of donating eggs in the United States.</p>
+
+        <p>She told me that her agent asked her to wear high-heeled shoes when she went to the clinic in Los Angeles so
+            they wouldn’t notice her height was exaggerated.</p>
+
+        <p>Anna, a manager at an egg donation agency in California who asked to go by a pseudonym, shared that it is
+            indeed a common practice for donor information like height to be exaggerated.</p>
+
+        <p>“If a donor is 5’3, we would probably go for 5’5, conservatively, ” she said.</p>
+
+        <p>Dr. Aimee said she’s seen donors lie about their height and hair color.</p>
+
+        <p>“They said they’re a certain height, but when they walked in, they’re definitely not that height, ” she said,
+            “I also had one donor walk in with a wig on. She was bald. She had a condition where she pulled all her hair
+            out.”</p>
+
+        <p>“I will never forget about it,” said Dr. Aimee.</p>
+
+        <p>Yet, many more are left unreported. In the most comprehensive study of U.S. fertility clinics, Dov Fox, a
+            national expert on health law and bioethics in the field, found that “more than one in five report errors in
+            diagnosing, labeling, and handling donor samples and embryos for implantation.”</p>
+
+        <p>Due to the lack of transparency for both the donor and recipient sides, the trust in medical professionals,
+            and the desperation of intended parents who have tried to conceive for many years to no avail, most cases of
+            misconduct would not come to light unless there is a visible destruction in embryos or eggs or the conceived
+            child started to show signs of disabilities at least a decade after.</p>
+
+        <p>While other areas of medicine are tightly controlled, the fertility sector operates with a level of autonomy
+            that leaves it ripe for abuse.</p>
+
+        <p>“There is no regulation,“ said Danielle Winston, the founder of The Seed Scout, a sperm donation agency that
+            emphasizes ethical and known donation. “There's no law that criminalizes this at all or has any repercussion
+            for anyone with bad intent.”</p>
+
+        <p>Dr. Aimee said that the industry is without record-keeping, and she wished to establish a registry system
+            herself to track donor history and medical updates.</p>
+
+        <p>“I had an egg donor who had donated over 24 times. She was changing her name and donating. She's maxing out
+            all the egg banks for providing fraudulent ID cards, “she said.</p>
+
+        <p>According to the American Society of Reproductive Medicine (ASRM), the suggested limit of egg donation should
+            be six times in a lifetime to avoid ovarian health issues and</p>
+
+        <p>The only reason why Dr. Aimee found out about it was because the doctor she sent the donor for monitoring and
+            ultrasound told her that the donor had been to the clinic three times that year.</p>
+
+        <p>“I thought it was her first cycle,” said Dr. Aimee.</p>
+
+    </div>
+
+    <div class="container">
+        <section id="scrolly-images" class="scrolly-container">
+            <div class="sticky-thing">
+                <img src="/Visuals/convo-1/2.png">
             </div>
-            <div class="step" id="step-second">
-                <p> <strong>TK</strong> XXXXX
-                </p>
+            <div class="steps-container">
+                <div class="step" id="step1">
+                    <div>
+                        <img src="/Visuals/convo-1/3.png">
+                        <p>Step one, adjust the CSS at the bottom of this page to change spacing between steps.</p>
+                        <p>Here is some more text, in case there are multiple paragraphs.</p>
+                    </div>
+                </div>
+                <div class="step" id="step2">
+                    <img src="/Visuals/convo-1/4.png">
+                    <p>Find the JavaScript code near the bottom to associate each step with an image change.</p>
+                </div>
+                <div class="step" id="step3">
+                    <img src="/Visuals/convo-1/5.png">
+                    <p>By default, the steps are a set width and the text is left-centered. Find the rule in
+                        <code>scrolly-styles.css</code> that refers to <code>.step > *</code> to adjust or remove the
+                        width,
+                        center
+                        the text, or change the background color/opacity.
+                    </p>
+                </div>
+                <div class="step" id="step4">
+                    <p>Step four, lorem ipsum dolor sic amet.</p>
+                </div>
+                <div class="step" id="step5">
+                    <p>Step five, lorem ipsum dolor sic amet.</p>
+                </div>
             </div>
-            <div class="step" id="step-thrid">
-                <p> TKTKKTK
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+
+
+    <script>
+        /*************
+        
+        This is the JavaScript that makes the scrolly work 
+        
+        *************/
+
+        /* 
+        This part attaches a scroll to the element with id="scrolly-images"    
+        */
+        (() => {
+            const scroller = scrollama()
+
+            scroller
+                .setup({
+                    parent: document.querySelector("#scrolly-images"),
+                    step: ".step",
+                    offset: 0.6,
+                    debug: False,
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller.resize)
+        })()
+
+        /*
+        This part sets up your actions. In this case, it's changing the image in the scrolly container.
+        */
+        d3.select("#step1").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "/Visuals/convo-1/2.png")
+        })
+
+        d3.select("#step2").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "Visuals/convo-1/3.png")
+        })
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "/Visuals/convo-1/4.png")
+        })
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "/Visuals/convo-1/5.png")
+        })
+
+        d3.select("#step5").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "a/b/c/.png")
+        })
+    </script>
+    <style>
+        /* Change this to adjust the padding between steps */
+        .step {
+            margin-bottom: 40vh;
+        }
+    </style>
 
 </body>
 
